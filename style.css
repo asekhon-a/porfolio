@@ -1,0 +1,363 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #F9FAFB;
+    --text-color: #1F2937;
+    --accent-color: #3B82F6;
+    --secondary-accent: #2563EB;
+    --card-bg: #FFFFFF;
+    --shadow-light: rgba(59, 130, 246, 0.2);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #E0E0E0;
+    --accent-color: #00BFFF;
+    --secondary-accent: #1E90FF;
+    --card-bg: #1F1F1F;
+    --shadow-light: rgba(0, 191, 255, 0.2);
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--secondary-accent);
+}
+
+/* Header & Navigation */
+header {
+    background: var(--card-bg);
+    padding: 15px 40px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Toggle Dark Mode Button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    font-weight: 600;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.toggle-btn:hover {
+    background: var(--secondary-accent);
+    box-shadow: 0 6px 15px var(--shadow-light);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #e0f2fe;
+    /* Light blue background */
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .hero {
+    background: #003e6b;
+    /* Dark blue background in dark mode */
+}
+
+.hero-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid var(--accent-color);
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+    border-color: var(--secondary-accent);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--secondary-accent);
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: 30px auto;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Headings */
+.section h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: var(--accent-color);
+    animation: fadeIn 1s ease-in;
+}
+
+/* About Section */
+.about p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+/* Skills Section */
+.skills .skill-category {
+    background: var(--card-bg);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    cursor: default;
+}
+
+.skills .skill-category:hover {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skills .skill-category:hover ul li {
+    color: white;
+}
+
+.skills .skill-category h3 {
+    margin-bottom: 12px;
+}
+
+.skills .skill-category ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.skills .skill-category ul li {
+    margin-bottom: 6px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+/* Experience Section */
+.job {
+    margin-bottom: 25px;
+}
+
+.job h3 {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.job p em {
+    font-style: normal;
+    color: var(--secondary-accent);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.job ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--text-color);
+}
+
+.job ul li {
+    margin-bottom: 8px;
+}
+
+/* Certifications Section */
+.certifications ul {
+    list-style-type: none;
+    padding-left: 0;
+    max-width: 600px;
+    margin: auto;
+}
+
+.certifications ul li {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: background-color 0.3s ease;
+}
+
+.certifications ul li:hover {
+    background: var(--secondary-accent);
+}
+
+/* CV Section */
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-weight: 700;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.download-btn:hover {
+    background-color: var(--secondary-accent);
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.contact button {
+    padding: 12px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.contact button:hover {
+    background: var(--secondary-accent);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    margin-top: 40px;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 40px 20px;
+    }
+}
